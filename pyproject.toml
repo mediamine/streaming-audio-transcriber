@@ -1,0 +1,28 @@
+[project]
+name = "streaming-audio-transcriber"
+requires-python = ">=3.9"
+
+[tool.poetry]
+version = "0.1.0"
+description = ""
+authors = ["MohsinKhan-MediaMine <mohsin@mediamine.co.nz>"]
+readme = "README.md"
+packages = [{ include = "streaming_audio_transcriber", from = "src" }]
+# package-mode = false
+
+[tool.poetry.dependencies]
+black = "^25.1.0"
+pika = "^1.3.2"
+python = "^3.11"
+python-dotenv = "^1.1.0"
+pyaudio = "^0.2.14"
+streamlit = "^1.44.1"
+websockets = "^11"
+
+[tool.poetry.scripts]
+# bootstrap the streamlit app from a poetry project
+transcriber-run-script = "streaming_audio_transcriber.cli:run"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
